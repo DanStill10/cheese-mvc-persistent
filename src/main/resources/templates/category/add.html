@@ -9,8 +9,8 @@
 <form method="post" style="max-width:300px;" th:object="${category}">
     <div class="form-group">
         <label th:for="title">Name</label>
-        <input class="form-control" th:field="*{title}" />
-        <span th:errors="*{title}" class="error"></span>
+        <input th:field="*{name}" class="form-control"/>
+        <span th:errors="*{name}" class="error"></span>
     </div>
     <input type="submit" value="Add Category" />
 </form>
