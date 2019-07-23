@@ -30,7 +30,7 @@ public class MenuController {
     public String index(Model model){
         model.addAttribute("menus", menuDao.findAll());
         model.addAttribute("title","All Menus");
-        return "menus/index";
+        return "menu/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
@@ -45,6 +45,7 @@ public class MenuController {
 
         if (errors.hasErrors()){
             model.addAttribute("title","Add Menu");
+            model.addAttribute(new Menu());
             return "menu/add";
         }
         menuDao.save(menu);
